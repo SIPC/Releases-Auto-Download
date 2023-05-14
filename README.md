@@ -4,4 +4,4 @@
 
 owner：用户名/组织名  
 repo：仓库名  
-keyword：下载关键词
+keyword：下载关键词,支持多关键词匹配如 `["TurboWarp","x64"]`
