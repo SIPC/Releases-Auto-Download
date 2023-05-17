@@ -4,7 +4,7 @@
 
 owner：用户名/组织名  
 repo：仓库名  
-keyword：下载关键词,支持多关键词匹配如 `["TurboWarp","x64"]`  
+keyword：下载关键词,支持多关键词匹配如 `["Download"]`  
 
 ```
 get_latest_release_files("SIPC", "Releases-Auto-Download", ["Download"])
@@ -17,7 +17,7 @@ Go to `Download.py` and modify the parameters after the `get_latest_release_file
 
 owner: username/organization name  
 repo: name of the repository  
-keyword: download keyword, supports multiple keywords such as `["TurboWarp", "x64"]`  
+keyword: download keyword, supports multiple keywords such as `["Download"]`  
 ```
 get_latest_release_files("SIPC", "Releases-Auto-Download", ["Download"])
 ```
