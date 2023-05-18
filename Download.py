@@ -7,14 +7,15 @@ def download_file(url, file_path):
         response = requests.get(url)
         f.write(response.content)
 
-def get_latest_release_files(owner, repo, keywords):
-    url = f"https://api.github.com/repos/{owner}/{repo}/releases/latest"
+def get_release_files(owner, repo, keywords):
+    url = f"https://api.github.com/repos/{owner}/{repo}/releases"
     response = requests.get(url)
     data = json.loads(response.text)
-    assets = data["assets"]
-    for asset in assets:
-        if all(keyword in asset["name"] for keyword in keywords):
-            print("Download: " + asset["name"])
-            download_file(asset["browser_download_url"], asset["name"])
+    for release in data:
+        assets = release["assets"]
+        for asset in assets:
+            if all(keyword in asset["name"] for keyword in keywords):
+                print("Download: " + asset["name"])
+                download_file(asset["browser_download_url"], asset["name"])
 
-get_latest_release_files("owner", "repo", ["keyword1","keyword2"])
+get_release_files("owner", "repo", ["keyword1","keyword2"])
